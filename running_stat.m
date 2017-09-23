@@ -1,7 +1,9 @@
 % mean and standard deviation using running statistics
 clear;clc
 
-x = rand(1,512);
+Nx = 512;
+
+x = rand(1,Nx);
 signal = sin(x);
 
 N = 0;
@@ -21,7 +23,7 @@ for i=1:length(x)
        continue;
    end
    
-   varn = (sum_squares - sumn.^2/N)/(N-1);
+   varn = (sum_squares - sumn^2/N)/(N-1);
    stdn = sqrt(varn);
 end
 
